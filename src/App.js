@@ -4,6 +4,13 @@ import { useEffect } from "react";
 import searchIcon from './Search.svg';
 const API_URL = 'https://www.omdbapi.com?apikey=704ff8af';
 
+const movie1 = {
+    "Title": "The Amazing Spiderman 2 Webb Cut",
+    "Year": "2021",
+    "imdbID": "tt18351128",
+    "Type": "movie",
+    "Poster": "N/A"
+}
 
 const App = () =>{
 
@@ -26,8 +33,26 @@ const App = () =>{
 
 
             <div className = 'search'>
-                <input placeholder="Search For Movies" value='Superman'onChange={()=>{}}>
-                </input>
+                <input placeholder="Search For Movies" value='Superman' onChange={()=>{}}/>
+                <img src= {searchIcon} alt = 'search'  onClick={()=>{}} />
+            </div>
+
+            <div className="container">
+                <div className = "movie">
+                    <div>
+                    <p>{movie1.Year}</p>
+                </div>
+
+                <div>
+                    <img src={movie1.Poster !== 'N/A'?  movie1.Poster : 'https://via.placeholder.com/400'} alt={movie1.Title} />
+                </div>
+
+                <div>
+                    <span>{movie1.Type}</span>
+                    <h3>{movie1.Title}</h3>
+                </div>
+
+                </div>
             </div>
         </div>
     );
